@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 
-const orders = () => {
+const Orders = () => {
     const router=useRouter();
     const [order,setOrders]=useState([]);
 
@@ -75,7 +75,7 @@ const orders = () => {
     )
 }
 
-export default orders
+export default Orders
 
 
 // export async function getServerSideProps(context) {

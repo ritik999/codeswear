@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const signup = () => {
+const Signup = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -101,4 +101,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup

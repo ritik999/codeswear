@@ -3,7 +3,7 @@ import React from 'react'
 import mongoose from 'mongoose';
 import OrderSchema from '../models/Order';
 
-const order = ({ orders }) => {
+const Order = ({ orders }) => {
   const router = useRouter();
   // console.log(orders);
   const product = orders.products;
@@ -62,4 +62,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default order
+export default Order

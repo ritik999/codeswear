@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import mongoose from 'mongoose'
 import ProductSchema from "../../models/Product";
 
@@ -11,6 +11,11 @@ const Post = ({ addToCart, product, variants, buyNow }) => {
   const [service, setService] = useState();
   const [color, setColor] = useState(product.color);
   const [size, setSize] = useState(product.size);
+
+  useEffect(()=>{
+     setColor(product.color);
+     setSize(product.size);
+  },[router.query])
 
   const checkServiceability = async () => {
     let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`)
@@ -28,7 +33,8 @@ const Post = ({ addToCart, product, variants, buyNow }) => {
 
   const refreshVariant=(newsize,newcolor)=>{
     let url=`${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]['slug']}`
-    window.location=url;
+    // window.location=url;
+    router.push(url);
   }
   return (
     <>

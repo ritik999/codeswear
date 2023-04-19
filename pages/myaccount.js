@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 
-const myaccount = () => {
+const Myaccount = () => {
     const router=useRouter();
     useEffect(()=>{
         if(!localStorage.getItem('token')){
@@ -14,4 +14,4 @@ const myaccount = () => {
   )
 }
 
-export default myaccount
+export default Myaccount

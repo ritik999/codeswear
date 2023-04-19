@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 
 const handler = async (req, res) => {
     if (req.method == "POST") {
+        console.log(req.body);
         const user = await UserSchema.findOne({ "email": req.body.email });
         var bytes = CryptoJS.AES.decrypt(user.password, 'secret123');
         var originalPass = bytes.toString(CryptoJS.enc.Utf8);

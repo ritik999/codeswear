@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 
-const forgotpass = () => {
+const Forgotpass = () => {
 
   const router=useRouter();
   
@@ -50,4 +50,4 @@ const forgotpass = () => {
   )
 }
 
-export default forgotpass
+export default Forgotpass
